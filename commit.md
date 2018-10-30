@@ -1,1 +1,1 @@
-12 backend functions and routes created and changed on 11/19/2018
+5 backend functions and routes created and changed on 10/30/2018
