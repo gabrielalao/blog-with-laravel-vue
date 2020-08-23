@@ -1,1 +1,1 @@
-# laravel-backend-vue-frontend
+# Making simple blog using laravel and vue 2
