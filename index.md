@@ -1,37 +1,106 @@
-## Welcome to GitHub Pages
+## Laravel and Vue blog source code 
 
-You can use the [editor on GitHub](https://github.com/gabrielalao/blog-with-laravel-vue/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Blog with laravel backend and vue front end- 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Download this code for free
 
-### Markdown
+### Support
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+contact gabrieldeveloper1@gmail.com
 
 ```markdown
-Syntax highlighted code block
+<?php
 
-# Header 1
-## Header 2
-### Header 3
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ *
+ * @package  Laravel
+ 
+ */
 
-- Bulleted
-- List
+$uri = urldecode(
+    parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+);
 
-1. Numbered
-2. List
+// This file allows us to emulate Apache's "mod_rewrite" functionality from the
+// built-in PHP web server. This provides a convenient way to test a Laravel
+// application without having installed a "real" web server software here.
+if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
+    return false;
+}
 
-**Bold** and _Italic_ and `Code` text
+require_once __DIR__.'/public/index.php';
 
-[Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gabrielalao/blog-with-laravel-vue/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```markdown
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Create The Application
+|--------------------------------------------------------------------------
+|
+| The first thing we will do is create a new Laravel application instance
+| which serves as the "glue" for all the components of Laravel, and is
+| the IoC container for the system binding all of the various parts.
+|
+*/
+
+$app = new Illuminate\Foundation\Application(
+    realpath(__DIR__.'/../')
+);
+
+/*
+|--------------------------------------------------------------------------
+| Bind Important Interfaces
+|--------------------------------------------------------------------------
+|
+| Next, we need to bind some important interfaces into the container so
+| we will be able to resolve them when needed. The kernels serve the
+| incoming requests to this application from both the web and CLI.
+|
+*/
+
+$app->singleton(
+    Illuminate\Contracts\Http\Kernel::class,
+    App\Http\Kernel::class
+);
+
+$app->singleton(
+    Illuminate\Contracts\Console\Kernel::class,
+    App\Console\Kernel::class
+);
+
+$app->singleton(
+    Illuminate\Contracts\Debug\ExceptionHandler::class,
+    App\Exceptions\Handler::class
+);
+
+/*
+|--------------------------------------------------------------------------
+| Return The Application
+|--------------------------------------------------------------------------
+|
+| This script returns the application instance. The instance is given to
+| the calling script so we can separate the building of the instances
+| from the actual running of the application and sending responses.
+|
+*/
+
+return $app;
+
+
+```
+
+For more details see [Code here](https://github.com/gabrielalao/blog-with-laravel-vue/).
+
+### Free
+
+Totally free to use
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Having troubles? email@gabrieldeveloper1@gmail.com
