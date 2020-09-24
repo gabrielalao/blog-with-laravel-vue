@@ -1,1 +1,1 @@
-# Making simple blog using laravel and vue 2
+# Blog with laravel and vue 2
